@@ -13,6 +13,7 @@
 		ADB7898D26BBCBFA00C4EA10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB7898B26BBCBFA00C4EA10 /* Main.storyboard */; };
 		ADB7898F26BBCBFB00C4EA10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB7898E26BBCBFB00C4EA10 /* Assets.xcassets */; };
 		ADB7899226BBCBFB00C4EA10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB7899026BBCBFB00C4EA10 /* LaunchScreen.storyboard */; };
+		ADB7899F26BC39E000C4EA10 /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7899E26BC39E000C4EA10 /* UserInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ADB7898E26BBCBFB00C4EA10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADB7899126BBCBFB00C4EA10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADB7899326BBCBFB00C4EA10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADB7899E26BC39E000C4EA10 /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		ADB7898426BBCBFA00C4EA10 /* Nanit Happy Birthday */ = {
 			isa = PBXGroup;
 			children = (
+				ADB7899D26BC39AE00C4EA10 /* Resources */,
+				ADB7899C26BC39A300C4EA10 /* UI */,
+				ADB7899B26BC399A00C4EA10 /* Model */,
 				ADB7898526BBCBFA00C4EA10 /* AppDelegate.swift */,
+			);
+			path = "Nanit Happy Birthday";
+			sourceTree = "<group>";
+		};
+		ADB7899B26BC399A00C4EA10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ADB7899E26BC39E000C4EA10 /* UserInput.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ADB7899C26BC39A300C4EA10 /* UI */ = {
+			isa = PBXGroup;
+			children = (
 				ADB7898726BBCBFA00C4EA10 /* SceneDelegate.swift */,
 				ADB7898926BBCBFA00C4EA10 /* InputViewController.swift */,
 				ADB7898B26BBCBFA00C4EA10 /* Main.storyboard */,
-				ADB7898E26BBCBFB00C4EA10 /* Assets.xcassets */,
 				ADB7899026BBCBFB00C4EA10 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		ADB7899D26BC39AE00C4EA10 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ADB7898E26BBCBFB00C4EA10 /* Assets.xcassets */,
 				ADB7899326BBCBFB00C4EA10 /* Info.plist */,
 			);
-			path = "Nanit Happy Birthday";
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADB7898A26BBCBFA00C4EA10 /* InputViewController.swift in Sources */,
+				ADB7899F26BC39E000C4EA10 /* UserInput.swift in Sources */,
 				ADB7898626BBCBFA00C4EA10 /* AppDelegate.swift in Sources */,
 				ADB7898826BBCBFA00C4EA10 /* SceneDelegate.swift in Sources */,
 			);
@@ -287,7 +315,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Nanit Happy Birthday/Info.plist";
+				INFOPLIST_FILE = "Nanit Happy Birthday/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,7 +333,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Nanit Happy Birthday/Info.plist";
+				INFOPLIST_FILE = "Nanit Happy Birthday/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
