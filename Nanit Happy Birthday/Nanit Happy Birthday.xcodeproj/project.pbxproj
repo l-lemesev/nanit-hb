@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD21ECF126BC44CD003A7552 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21ECF026BC44CD003A7552 /* ImagePicker.swift */; };
 		ADB7898626BBCBFA00C4EA10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7898526BBCBFA00C4EA10 /* AppDelegate.swift */; };
 		ADB7898826BBCBFA00C4EA10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7898726BBCBFA00C4EA10 /* SceneDelegate.swift */; };
 		ADB7898A26BBCBFA00C4EA10 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7898926BBCBFA00C4EA10 /* InputViewController.swift */; };
@@ -14,9 +15,11 @@
 		ADB7898F26BBCBFB00C4EA10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB7898E26BBCBFB00C4EA10 /* Assets.xcassets */; };
 		ADB7899226BBCBFB00C4EA10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB7899026BBCBFB00C4EA10 /* LaunchScreen.storyboard */; };
 		ADB7899F26BC39E000C4EA10 /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7899E26BC39E000C4EA10 /* UserInput.swift */; };
+		ADB789A426BC421700C4EA10 /* UITextField+InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB789A326BC421700C4EA10 /* UITextField+InputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD21ECF026BC44CD003A7552 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		ADB7898226BBCBFA00C4EA10 /* Nanit Happy Birthday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nanit Happy Birthday.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB7898526BBCBFA00C4EA10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADB7898726BBCBFA00C4EA10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		ADB7899126BBCBFB00C4EA10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADB7899326BBCBFB00C4EA10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADB7899E26BC39E000C4EA10 /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
+		ADB789A326BC421700C4EA10 /* UITextField+InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+InputView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD21ECEF26BC44BD003A7552 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				AD21ECF026BC44CD003A7552 /* ImagePicker.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		ADB7897926BBCBFA00C4EA10 = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +70,12 @@
 		ADB7898426BBCBFA00C4EA10 /* Nanit Happy Birthday */ = {
 			isa = PBXGroup;
 			children = (
+				ADB7898526BBCBFA00C4EA10 /* AppDelegate.swift */,
+				ADB789A226BC420800C4EA10 /* Extensions */,
+				ADB7899B26BC399A00C4EA10 /* Model */,
 				ADB7899D26BC39AE00C4EA10 /* Resources */,
 				ADB7899C26BC39A300C4EA10 /* UI */,
-				ADB7899B26BC399A00C4EA10 /* Model */,
-				ADB7898526BBCBFA00C4EA10 /* AppDelegate.swift */,
+				AD21ECEF26BC44BD003A7552 /* Util */,
 			);
 			path = "Nanit Happy Birthday";
 			sourceTree = "<group>";
@@ -92,6 +106,14 @@
 				ADB7899326BBCBFB00C4EA10 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		ADB789A226BC420800C4EA10 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ADB789A326BC421700C4EA10 /* UITextField+InputView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,7 +187,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADB7898A26BBCBFA00C4EA10 /* InputViewController.swift in Sources */,
+				ADB789A426BC421700C4EA10 /* UITextField+InputView.swift in Sources */,
 				ADB7899F26BC39E000C4EA10 /* UserInput.swift in Sources */,
+				AD21ECF126BC44CD003A7552 /* ImagePicker.swift in Sources */,
 				ADB7898626BBCBFA00C4EA10 /* AppDelegate.swift in Sources */,
 				ADB7898826BBCBFA00C4EA10 /* SceneDelegate.swift in Sources */,
 			);

@@ -17,29 +17,92 @@ class InputViewController: UIViewController {
     
     @IBOutlet weak var btnShowBdScreen: UIButton!
     
+    private var imagePicker: ImagePicker!
+    
+    
+    private var input: UserInput!
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        imagePicker = ImagePicker(presentationController: self, delegate: self)
+        tfBirthday.setInputViewDatePicker(target: self, selector: #selector(doneTap))
+        
+        loadInput()
+    }
+    
+    private func loadInput() {
+        guard let savedInput = UserInput.fromPersistence() else {
+            input = UserInput(name: "", birthday: Date(), pictureData: nil)
+            return
+        }
+        
+        input = savedInput
+        
+        tfName.text = input.name
+        showBirthdayText(input.birthday)
+        
+        
+        if let pictureData = input.pictureData {
+            ivPicture.image = UIImage(data: pictureData)
+        }
     }
 
     
     @IBAction func choosePicture() {
-        
+        imagePicker.present()
     }
     
     
     @IBAction func showBirthdayScreen() {
         
     }
+    
+    
+    @objc private func doneTap() {
+        if let datePicker = tfBirthday.inputView as? UIDatePicker {
+            input.birthday = datePicker.date
+            showBirthdayText(datePicker.date)
+        }
+        
+        tfBirthday.resignFirstResponder()
+    }
+    
+    
+    private func showBirthdayText(_ bd: Date?) {
+        guard let bd = bd else { return }
+        let dateformatter = DateFormatter()
+        dateformatter.dateStyle = .medium
+        tfBirthday.text = dateformatter.string(from: bd)
+    }
 }
 
 
 extension InputViewController: UITextFieldDelegate {
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        if textField == tfName {
+            input.name = tfName.text ?? ""
+            input.save()
+        }
         btnShowBdScreen.isEnabled = tfName.text?.isEmpty == false && tfBirthday.text?.isEmpty == false
     }
 }
 
+
+
+extension InputViewController: ImagePickerDelegate {
+    
+    func didSelect(image: UIImage?) {
+        ivPicture.image = image
+        input.pictureData = image?.pngData()
+    }
+}
