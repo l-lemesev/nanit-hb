@@ -48,6 +48,8 @@ class InputViewController: UIViewController {
         if let pictureData = input.pictureData {
             ivPicture.image = UIImage(data: pictureData)
         }
+        
+        enableShowBirthdayButtonIfNeeded()
     }
 
     
@@ -57,7 +59,7 @@ class InputViewController: UIViewController {
     
     
     @IBAction func showBirthdayScreen() {
-        
+        performSegue(withIdentifier: "showBirthday", sender: nil)
     }
     
     
@@ -77,6 +79,11 @@ class InputViewController: UIViewController {
         dateformatter.dateStyle = .medium
         tfBirthday.text = dateformatter.string(from: bd)
     }
+    
+    
+    private func enableShowBirthdayButtonIfNeeded() {
+        btnShowBdScreen.isEnabled = tfName.text?.isEmpty == false && tfBirthday.text?.isEmpty == false
+    }
 }
 
 
@@ -93,7 +100,8 @@ extension InputViewController: UITextFieldDelegate {
             input.name = tfName.text ?? ""
             input.save()
         }
-        btnShowBdScreen.isEnabled = tfName.text?.isEmpty == false && tfBirthday.text?.isEmpty == false
+        
+        enableShowBirthdayButtonIfNeeded()
     }
 }
 
