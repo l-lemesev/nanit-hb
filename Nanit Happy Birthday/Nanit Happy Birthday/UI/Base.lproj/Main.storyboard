@@ -120,19 +120,19 @@
                                             <constraint firstAttribute="width" secondItem="X3D-md-fah" secondAttribute="height" multiplier="1:1" id="c6s-85-AtM"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ItE-2Y-a6M">
-                                        <rect key="frame" x="328" y="358" width="36" height="36"/>
-                                        <state key="normal" image="cameraIconBlue"/>
-                                        <connections>
-                                            <action selector="cameraAction" destination="rVC-M1-fDO" eventType="touchUpInside" id="oQG-9H-FIw"/>
-                                        </connections>
-                                    </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iOsBgPelican" translatesAutoresizingMaskIntoConstraints="NO" id="ELe-9j-TMd">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" image="nanitLogo" translatesAutoresizingMaskIntoConstraints="NO" id="eJz-7s-l6v">
                                         <rect key="frame" x="178.5" y="692" width="57" height="20"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ItE-2Y-a6M">
+                                        <rect key="frame" x="189" y="497" width="36" height="36"/>
+                                        <state key="normal" image="cameraIconBlue"/>
+                                        <connections>
+                                            <action selector="cameraAction" destination="rVC-M1-fDO" eventType="touchUpInside" id="oQG-9H-FIw"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaH-aY-ZXe">
                                         <rect key="frame" x="108.5" y="732" width="197" height="42"/>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.4823529411764706" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
@@ -246,21 +246,21 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="8Cg-zk-Omt" firstAttribute="leading" secondItem="h2M-Fs-tTx" secondAttribute="leading" id="0l8-a1-q9o"/>
-                                    <constraint firstItem="ItE-2Y-a6M" firstAttribute="top" secondItem="X3D-md-fah" secondAttribute="top" id="2LW-gX-hDS"/>
                                     <constraint firstAttribute="trailing" secondItem="X3D-md-fah" secondAttribute="trailing" priority="750" constant="50" id="Dsp-4q-Rza"/>
+                                    <constraint firstItem="ItE-2Y-a6M" firstAttribute="centerY" secondItem="X3D-md-fah" secondAttribute="centerY" identifier="centerY" id="EgW-aJ-bNz"/>
                                     <constraint firstItem="X3D-md-fah" firstAttribute="leading" secondItem="h2M-Fs-tTx" secondAttribute="leading" priority="750" constant="50" id="FEH-ha-yA2"/>
                                     <constraint firstItem="ELe-9j-TMd" firstAttribute="top" secondItem="h2M-Fs-tTx" secondAttribute="top" id="FjO-LO-GjC"/>
                                     <constraint firstAttribute="bottom" secondItem="ELe-9j-TMd" secondAttribute="bottom" id="IQr-t2-egn"/>
                                     <constraint firstItem="X3D-md-fah" firstAttribute="centerX" secondItem="h2M-Fs-tTx" secondAttribute="centerX" id="Jr9-JE-LwX"/>
                                     <constraint firstItem="8Cg-zk-Omt" firstAttribute="top" secondItem="4lq-kH-TBg" secondAttribute="top" id="KsF-vp-x4R"/>
                                     <constraint firstAttribute="trailing" secondItem="ELe-9j-TMd" secondAttribute="trailing" id="UmA-aB-d9h"/>
-                                    <constraint firstItem="ItE-2Y-a6M" firstAttribute="trailing" secondItem="X3D-md-fah" secondAttribute="trailing" id="V2j-R3-Fvx"/>
                                     <constraint firstItem="eJz-7s-l6v" firstAttribute="centerX" secondItem="h2M-Fs-tTx" secondAttribute="centerX" id="caa-S7-6lJ"/>
                                     <constraint firstAttribute="trailing" secondItem="8Cg-zk-Omt" secondAttribute="trailing" id="ead-cZ-oRI"/>
                                     <constraint firstItem="eJz-7s-l6v" firstAttribute="top" secondItem="X3D-md-fah" secondAttribute="bottom" constant="20" id="faH-e4-GM3"/>
                                     <constraint firstItem="uaH-aY-ZXe" firstAttribute="centerX" secondItem="h2M-Fs-tTx" secondAttribute="centerX" id="kjZ-3n-eFK"/>
                                     <constraint firstItem="uaH-aY-ZXe" firstAttribute="top" secondItem="eJz-7s-l6v" secondAttribute="bottom" constant="20" id="mAn-Bd-TQ6"/>
                                     <constraint firstItem="4lq-kH-TBg" firstAttribute="bottom" secondItem="uaH-aY-ZXe" secondAttribute="bottom" constant="88" id="qyL-zV-iez"/>
+                                    <constraint firstItem="ItE-2Y-a6M" firstAttribute="centerX" secondItem="X3D-md-fah" secondAttribute="centerX" identifier="centerX" id="siK-yh-BPN"/>
                                     <constraint firstItem="ELe-9j-TMd" firstAttribute="leading" secondItem="h2M-Fs-tTx" secondAttribute="leading" id="u5m-g7-KDR"/>
                                     <constraint firstItem="X3D-md-fah" firstAttribute="top" secondItem="8Cg-zk-Omt" secondAttribute="bottom" constant="20" id="wXG-OS-trY"/>
                                 </constraints>

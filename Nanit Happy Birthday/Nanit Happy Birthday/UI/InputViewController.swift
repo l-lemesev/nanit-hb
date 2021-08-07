@@ -66,6 +66,7 @@ class InputViewController: UIViewController {
     @objc private func doneTap() {
         if let datePicker = tfBirthday.inputView as? UIDatePicker {
             input.birthday = datePicker.date
+            input.save()
             showBirthdayText(datePicker.date)
         }
         

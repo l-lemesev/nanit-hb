@@ -26,6 +26,8 @@ class BirthdayViewController: UIViewController {
     
     private var theme = getRandomTheme()
     
+    private let placeholderBorderWidth: CGFloat = 7
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +41,11 @@ class BirthdayViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         ivPlaceholder.layer.borderColor = theme.accentColor.cgColor
-        ivPlaceholder.layer.borderWidth = 7
+        ivPlaceholder.layer.borderWidth = placeholderBorderWidth
         ivPlaceholder.layer.cornerRadius = ivPlaceholder.frame.size.width / 2
         ivPlaceholder.layer.masksToBounds = true
+        
+        handleCameraButtonPosition()
     }
     
     
@@ -73,5 +77,15 @@ class BirthdayViewController: UIViewController {
         lblName.text = ageModel.firstLine
         ivNumber.image = UIImage(named: ageModel.imageName)
         lblAge.text = ageModel.secondLine
+    }
+    
+    
+    private func handleCameraButtonPosition() {
+        let centerXconstraint = view.subviews.map { $0.constraints.first(where: { $0.identifier == "centerX" }) }.first
+        let centerYconstraint = view.subviews.map { $0.constraints.first(where: { $0.identifier == "centerY" }) }.first
+        
+        
+        centerYconstraint??.constant = 0 - (ivPlaceholder.frame.width / 2 - btnCamera.frame.width - placeholderBorderWidth / 2)
+        centerXconstraint??.constant = ivPlaceholder.frame.height / 2 - btnCamera.frame.height - placeholderBorderWidth / 2
     }
 }

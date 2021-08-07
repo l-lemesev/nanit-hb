@@ -15,9 +15,11 @@ extension Date {
         let secondLine: String
         let imageName: String
         
-        let monthsDiff = abs(months(from: Date()))
+        let yearsDiff = abs(years(from: Date()))
         
-        if monthsDiff > 12 {
+        if yearsDiff == 0 {
+            let monthsDiff = abs(months(from: Date()))
+            
             if monthsDiff == 1 {
                 secondLine = "MONTH"
             } else {
@@ -26,8 +28,6 @@ extension Date {
             
             imageName = "\(monthsDiff)"
         } else {
-            let yearsDiff = abs(years(from: Date()))
-            
             if yearsDiff == 1 {
                 secondLine = "YEAR"
             } else {
