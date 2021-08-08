@@ -114,7 +114,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2M-Fs-tTx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" placeholderIntrinsicWidth="222" placeholderIntrinsicHeight="222" image="defaultPlaceHolderBlue" translatesAutoresizingMaskIntoConstraints="NO" id="X3D-md-fah">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" placeholderIntrinsicWidth="222" placeholderIntrinsicHeight="222" image="defaultPlaceHolderBlue" translatesAutoresizingMaskIntoConstraints="NO" id="X3D-md-fah">
                                         <rect key="frame" x="50" y="358" width="314" height="314"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="X3D-md-fah" secondAttribute="height" multiplier="1:1" id="c6s-85-AtM"/>

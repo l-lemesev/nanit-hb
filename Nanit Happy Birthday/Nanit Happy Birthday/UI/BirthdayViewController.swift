@@ -74,6 +74,18 @@ class BirthdayViewController: UIViewController {
         lblName.text = ageModel.firstLine
         ivNumber.image = UIImage(named: ageModel.imageName)
         lblAge.text = ageModel.secondLine
+        
+        if let pictureData = userInput.pictureData {
+            ivPlaceholder.image = UIImage(data: pictureData)
+        }
+    }
+    
+    
+    private func handlePictureBorder() {
+        ivPlaceholder.layer.borderColor = theme.accentColor.cgColor
+        ivPlaceholder.layer.borderWidth = placeholderBorderWidth
+        ivPlaceholder.layer.cornerRadius = ivPlaceholder.frame.size.width / 2
+        ivPlaceholder.layer.masksToBounds = true
     }
     
     

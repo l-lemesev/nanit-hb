@@ -113,5 +113,6 @@ extension InputViewController: ImagePickerDelegate {
     func didSelect(image: UIImage?) {
         ivPicture.image = image
         input.pictureData = image?.pngData()
+        input.save()
     }
 }
