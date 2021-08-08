@@ -22,6 +22,10 @@ class BirthdayViewController: UIViewController {
     @IBOutlet weak var btnCamera: UIButton!
     
     @IBOutlet weak var ivBackground: UIImageView!
+    
+    @IBOutlet weak var btnShare: UIButton!
+    
+    @IBOutlet weak var btnBack: UIButton!
 
     
     private var theme = getRandomTheme()
@@ -57,6 +61,30 @@ class BirthdayViewController: UIViewController {
     
     @IBAction func cameraAction() {
         imagePicker.present()
+    }
+    
+    
+    @IBAction func shareAction() {
+        toggleControlsVisibility()
+        
+        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
+        let image = renderer.image { ctx in
+            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        }
+        
+        toggleControlsVisibility()
+        
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        
+        
+        present(activityViewController, animated: true, completion: nil)
+    }
+    
+    
+    private func toggleControlsVisibility() {
+        btnBack.isHidden = !btnBack.isHidden
+        btnCamera.isHidden = !btnCamera.isHidden
+        btnShare.isHidden = !btnShare.isHidden
     }
     
     
