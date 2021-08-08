@@ -28,6 +28,8 @@ class BirthdayViewController: UIViewController {
     
     private let placeholderBorderWidth: CGFloat = 7
     
+    private var imagePicker: ImagePicker!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,8 @@ class BirthdayViewController: UIViewController {
         
         applyTheme()
         loadInput()
+        
+        imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
     
     
@@ -52,7 +56,7 @@ class BirthdayViewController: UIViewController {
     
     
     @IBAction func cameraAction() {
-        
+        imagePicker.present()
     }
     
     
@@ -101,5 +105,18 @@ class BirthdayViewController: UIViewController {
         
         centerXconstraint??.constant = ivPlaceholder.center.x - newX
         centerYconstraint??.constant = ivPlaceholder.center.y - newY
+    }
+}
+
+
+extension BirthdayViewController: ImagePickerDelegate {
+    
+    func didSelect(image: UIImage?) {
+        var userInput = UserInput.fromPersistence()
+        userInput?.pictureData = image?.pngData()
+        userInput?.save()
+        
+        
+        ivPlaceholder.image = image
     }
 }
