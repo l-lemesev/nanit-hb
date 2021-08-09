@@ -8,7 +8,8 @@
 import UIKit
 
 
-class BirthdayViewController: UIViewController {
+
+class BirthdayViewController: UIViewController, ChildInfoUI, Themeable, Shareable {
     
 
     @IBOutlet weak var lblName: UILabel!
@@ -17,7 +18,7 @@ class BirthdayViewController: UIViewController {
     
     @IBOutlet weak var lblAge: UILabel!
     
-    @IBOutlet weak var ivPlaceholder: UIImageView!
+    @IBOutlet weak var ivPicture: UIImageView!
     
     @IBOutlet weak var btnCamera: UIButton!
     
@@ -26,30 +27,28 @@ class BirthdayViewController: UIViewController {
     @IBOutlet weak var btnShare: UIButton!
     
     @IBOutlet weak var btnBack: UIButton!
-
-    
-    private var theme = getRandomTheme()
-    
-    private let placeholderBorderWidth: CGFloat = 7
     
     private var imagePicker: ImagePicker!
+    
+    private var theme: Theme!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         
-        applyTheme()
-        loadInput()
-        
         imagePicker = ImagePicker(presentationController: self, delegate: self)
+        theme = applyRandomTheme(to: self)
+        
+        loadInput()
     }
     
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        handlePictureBorder()
+        ivPicture.addBorder(theme.accentColor)
         handleCameraButtonPosition()
     }
     
@@ -65,59 +64,7 @@ class BirthdayViewController: UIViewController {
     
     
     @IBAction func shareAction() {
-        toggleControlsVisibility()
-        
-        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
-        let image = renderer.image { ctx in
-            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-        }
-        
-        toggleControlsVisibility()
-        
-        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        
-        
-        present(activityViewController, animated: true, completion: nil)
-    }
-    
-    
-    private func toggleControlsVisibility() {
-        btnBack.isHidden = !btnBack.isHidden
-        btnCamera.isHidden = !btnCamera.isHidden
-        btnShare.isHidden = !btnShare.isHidden
-    }
-    
-    
-    private func applyTheme() {
-        ivBackground.image = UIImage(named: theme.bgImageName)
-        ivPlaceholder.image = UIImage(named: theme.placeHolderImageName)
-        btnCamera.setImage(UIImage(named: theme.cameraImageName), for: .normal)
-        view.backgroundColor = theme.backgroundColor
-    }
-    
-    
-    private func loadInput() {
-        guard let userInput = UserInput.fromPersistence(),
-              let name = userInput.name,
-              let birthday = userInput.birthday else { return }
-        
-        let ageModel = birthday.getAgeModel(name: name)
-        
-        lblName.text = ageModel.firstLine
-        ivNumber.image = UIImage(named: ageModel.imageName)
-        lblAge.text = ageModel.secondLine
-        
-        if let pictureData = userInput.pictureData {
-            ivPlaceholder.image = UIImage(data: pictureData)
-        }
-    }
-    
-    
-    private func handlePictureBorder() {
-        ivPlaceholder.layer.borderColor = theme.accentColor.cgColor
-        ivPlaceholder.layer.borderWidth = placeholderBorderWidth
-        ivPlaceholder.layer.cornerRadius = ivPlaceholder.frame.size.width / 2
-        ivPlaceholder.layer.masksToBounds = true
+        shareView(exclue: [btnBack, btnCamera, btnShare])
     }
     
     
@@ -127,24 +74,24 @@ class BirthdayViewController: UIViewController {
         
         
         let radians = 225.0 * .pi / 180.0
-        let radius = ivPlaceholder.frame.width / 2
-        let newX = ivPlaceholder.center.x + radius * CGFloat(cos(radians))
-        let newY = ivPlaceholder.center.y - radius * CGFloat(sin(radians))
+        let radius = ivPicture.frame.width / 2
+        let newX = ivPicture.center.x + radius * CGFloat(cos(radians))
+        let newY = ivPicture.center.y - radius * CGFloat(sin(radians))
         
-        centerXconstraint??.constant = ivPlaceholder.center.x - newX
-        centerYconstraint??.constant = ivPlaceholder.center.y - newY
+        centerXconstraint??.constant = ivPicture.center.x - newX
+        centerYconstraint??.constant = ivPicture.center.y - newY
     }
 }
 
 
 extension BirthdayViewController: ImagePickerDelegate {
     
+    
     func didSelect(image: UIImage?) {
         var userInput = UserInput.fromPersistence()
         userInput?.pictureData = image?.pngData()
         userInput?.save()
         
-        
-        ivPlaceholder.image = image
+        ivPicture.image = image
     }
 }

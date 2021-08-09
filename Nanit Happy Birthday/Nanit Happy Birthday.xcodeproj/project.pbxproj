@@ -11,6 +11,10 @@
 		AD21143326BEDA08007AF66E /* Date+Age.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21143226BEDA08007AF66E /* Date+Age.swift */; };
 		AD21143526BEDC9F007AF66E /* AgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21143426BEDC9F007AF66E /* AgeModel.swift */; };
 		AD21143726BEF016007AF66E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21143626BEF016007AF66E /* Theme.swift */; };
+		AD21143926C043C6007AF66E /* UIImageView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21143826C043C6007AF66E /* UIImageView+Border.swift */; };
+		AD21143C26C11059007AF66E /* Shareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21143B26C11059007AF66E /* Shareable.swift */; };
+		AD21143E26C1106F007AF66E /* Themeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21143D26C1106F007AF66E /* Themeable.swift */; };
+		AD21144026C11081007AF66E /* ChildInfoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21143F26C11081007AF66E /* ChildInfoUI.swift */; };
 		AD21ECF126BC44CD003A7552 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21ECF026BC44CD003A7552 /* ImagePicker.swift */; };
 		ADB7898626BBCBFA00C4EA10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7898526BBCBFA00C4EA10 /* AppDelegate.swift */; };
 		ADB7898826BBCBFA00C4EA10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB7898726BBCBFA00C4EA10 /* SceneDelegate.swift */; };
@@ -27,6 +31,10 @@
 		AD21143226BEDA08007AF66E /* Date+Age.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Age.swift"; sourceTree = "<group>"; };
 		AD21143426BEDC9F007AF66E /* AgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeModel.swift; sourceTree = "<group>"; };
 		AD21143626BEF016007AF66E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		AD21143826C043C6007AF66E /* UIImageView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Border.swift"; sourceTree = "<group>"; };
+		AD21143B26C11059007AF66E /* Shareable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shareable.swift; sourceTree = "<group>"; };
+		AD21143D26C1106F007AF66E /* Themeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themeable.swift; sourceTree = "<group>"; };
+		AD21143F26C11081007AF66E /* ChildInfoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildInfoUI.swift; sourceTree = "<group>"; };
 		AD21ECF026BC44CD003A7552 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		ADB7898226BBCBFA00C4EA10 /* Nanit Happy Birthday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nanit Happy Birthday.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB7898526BBCBFA00C4EA10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD21143A26C1104C007AF66E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AD21143B26C11059007AF66E /* Shareable.swift */,
+				AD21143D26C1106F007AF66E /* Themeable.swift */,
+				AD21143F26C11081007AF66E /* ChildInfoUI.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		AD21ECEF26BC44BD003A7552 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +99,7 @@
 				ADB7898526BBCBFA00C4EA10 /* AppDelegate.swift */,
 				ADB789A226BC420800C4EA10 /* Extensions */,
 				ADB7899B26BC399A00C4EA10 /* Model */,
+				AD21143A26C1104C007AF66E /* Protocols */,
 				ADB7899D26BC39AE00C4EA10 /* Resources */,
 				ADB7899C26BC39A300C4EA10 /* UI */,
 				AD21ECEF26BC44BD003A7552 /* Util */,
@@ -124,6 +143,7 @@
 			children = (
 				ADB789A326BC421700C4EA10 /* UITextField+InputView.swift */,
 				AD21143226BEDA08007AF66E /* Date+Age.swift */,
+				AD21143826C043C6007AF66E /* UIImageView+Border.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,11 +218,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD21143E26C1106F007AF66E /* Themeable.swift in Sources */,
 				ADB7898A26BBCBFA00C4EA10 /* InputViewController.swift in Sources */,
+				AD21143C26C11059007AF66E /* Shareable.swift in Sources */,
 				ADB789A426BC421700C4EA10 /* UITextField+InputView.swift in Sources */,
+				AD21144026C11081007AF66E /* ChildInfoUI.swift in Sources */,
 				AD21143526BEDC9F007AF66E /* AgeModel.swift in Sources */,
 				ADB7899F26BC39E000C4EA10 /* UserInput.swift in Sources */,
 				AD21ECF126BC44CD003A7552 /* ImagePicker.swift in Sources */,
+				AD21143926C043C6007AF66E /* UIImageView+Border.swift in Sources */,
 				ADB7898626BBCBFA00C4EA10 /* AppDelegate.swift in Sources */,
 				ADB7898826BBCBFA00C4EA10 /* SceneDelegate.swift in Sources */,
 				AD21143726BEF016007AF66E /* Theme.swift in Sources */,

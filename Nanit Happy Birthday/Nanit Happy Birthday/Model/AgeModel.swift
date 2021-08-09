@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 struct AgeModel {
@@ -15,4 +16,11 @@ struct AgeModel {
     let secondLine: String
     
     let imageName: String
+    
+    
+    func fill(_ info: ChildInfoUI) {
+        info.lblName.text = firstLine
+        info.ivNumber.image = UIImage(named: imageName)
+        info.lblAge.text = secondLine
+    }
 }

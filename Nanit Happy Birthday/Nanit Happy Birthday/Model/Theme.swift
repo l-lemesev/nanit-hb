@@ -22,9 +22,22 @@ protocol Theme {
     var backgroundColor: UIColor { get }
 }
 
+extension Theme {
+    
+    func apply(to themeable: Themeable) {
+        themeable.ivBackground.image = UIImage(named: bgImageName)
+        themeable.ivPicture.image = UIImage(named: placeHolderImageName)
+        themeable.ivPicture.addBorder(accentColor)
+        themeable.btnCamera.setImage(UIImage(named: cameraImageName), for: .normal)
+        themeable.view.backgroundColor = backgroundColor
+    }
+}
 
-func getRandomTheme() -> Theme {
-    return [BlueTheme(), GreenTheme(), YellowTheme()].randomElement() as! Theme
+
+func applyRandomTheme(to themeable: Themeable) -> Theme {
+    let randomTheme = [BlueTheme(), GreenTheme(), YellowTheme()].randomElement() as! Theme
+    randomTheme.apply(to: themeable)
+    return randomTheme
 }
 
 
